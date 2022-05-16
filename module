@@ -1,0 +1,520 @@
+ // Check the given number is EVEN or ODD.
+/*class EvenorOdd{
+	
+	public static void checkEvenorOdd(int num){
+		if(num%2==0){
+			System.out.println("Number is even");
+		}
+		else{
+			System.out.println("Number is even");
+		}
+	}
+	public static void main(String[] args){
+		checkEvenorOdd(20);
+	}
+} */
+//-----------------------------------------------------
+// Write a Java Program to find the Factorial of given number. 
+
+//-----------------------------------------------------
+
+
+// Swap two numbers without using third variable approach. 
+/*
+class Swap{
+	public static void main(String[] args){
+		int a = 10;
+		int b = 20;
+		
+		System.out.println("Before swap a="+a+" and b="+b);
+		
+		a =a + b;
+		b =a - b;
+		a =a - b;
+	
+		System.out.println("After swap a="+a+" and b="+b);
+	}
+}
+*/	
+//-----------------------------------------------------	
+	
+// How to check the given number is Positive or Negative in Java?
+/*
+class Check{
+	public static void main(String[] args){
+		int num= 1200;
+		if(num>=0){
+			System.out.println("Number is positive");
+		}
+		else{
+			System.out.println("Number is Negative");
+		}
+	}
+}
+*/
+//-----------------------------------------------------
+
+//6. Write a Java Program to find whether given number is Leap year or NOT? 
+/*
+class Leapyear{
+	public static void main(String[] args){
+		int year= 1300;
+		if((year%100!=0) & (year%4==0)){
+			System.out.println("Year is Leap year");
+		}
+		else if(year%400==0){
+			System.out.println("Year is Leap year");
+		}
+		else{
+			System.out.println("Year is Not a Leap year");
+		}
+	}
+}
+*/
+//-----------------------------------------------------
+
+//7. Write a Java Program to Print 1 To 10 Without Using Loop. 
+
+/*
+class Printnum{
+	public static void Recursion(int n){
+		if (n<=10){
+			System.out.println(n);
+			Recursion(n+1);
+		}
+	}
+	public static void main(String[] args){
+		Recursion(1);
+	}
+}
+*/
+//-----------------------------------------------------
+
+//8. Write a Java Program to print the digits of a Given Number. 
+
+//-----------------------------------------------------
+
+//9. Write a Java Program to print all the Factors of the Given number.
+/*
+class Factors{
+	public static void main(String[] args){
+		int num = 13;
+		System.out.print("Factors of "+num+" are ");
+		for (int i=1;i<=num;i++){
+			if (num%i==0){
+				System.out.print(i+" ");
+			}
+		}
+	}
+}
+*/
+ 
+//-----------------------------------------------------
+
+//10. Write a Java Program to find sum of the digits of a given number.
+/*
+class Digitsum{
+	public static void main(String[] args){
+		int a = 12341;
+		int digitsum = 0;
+		while(a>0){
+			int rem=a%10;
+			a=a/10;
+			digitsum=digitsum+rem;
+		}
+		System.out.println(digitsum);
+	}
+} 
+*/
+
+//-----------------------------------------------------
+//11. Write a Java Program to find the smallest of 3 numbers (a,b,c).
+/*
+class Smallest{
+	static void least(int a, int b, int c){
+		if(a < b){
+			if(b < c){
+				System.out.println(a+" is smallest number");
+			}
+			else if(c<a){
+				System.out.println(c+" is smallest number");
+			}
+			else{
+				System.out.println(a+" is smallest number");
+			}
+		}
+		else if(b < a){
+			if(a < c){
+				System.out.println(b+" is smallest number");
+			}
+			else if(c<b){
+				System.out.println(c+" is smallest number");
+			}
+			else{
+				System.out.println(b+" is smallest number");
+			}
+		}
+		else{
+				System.out.println(c+" is smallest number");
+			}
+	}
+	public static void main(String[] args){
+		least(10,30,10);
+	}
+}
+*/
+
+//-----------------------------------------------------
+
+//12. How to add two numbers without using the arithmetic operators in Java? 
+
+/*
+class Addition{
+	public static void main(String[] args){
+		
+		int a =10;
+		int b =30;
+		for (int i=1;i<=b;i++){
+			a++;
+		}
+		System.out.println("Addition of two numbers="+a);
+	}
+}
+*/
+
+//-----------------------------------------------------
+
+//13. Write a java program to Reverse a given number. 
+/*
+class Reversenum{
+	public static void main(String[] args){
+		int a = 1234;
+		int b = 0;
+		while(a>0){
+			int rem=a%10;
+			a=a/10;
+			b=(b*10)+rem;
+		}
+		System.out.println(b);
+	}
+}
+*/
+
+//-----------------------------------------------------
+//14. Write a Java Program to find GCD of two given numbers. 
+
+//-----------------------------------------------------
+//15. Write a java program to LCM of TWO given number. 
+
+//-----------------------------------------------------
+//16. Write a java program to LCM of TWO given number using Prime Factors method. 
+
+//-----------------------------------------------------
+//17. Check whether the Given Number is a Palindrome or NOT.
+/*
+class Palindrome{
+	public static void main(String[] args){
+		int num = 121;
+		int a = num;
+		int b = 0;
+		while(a>0){
+			int rem=a%10;
+			a=a/10;
+			b=(b*10)+rem;
+		}
+		System.out.println(b);
+		if (num==b){
+			System.out.println("Numer is palindrome number");
+		}
+		else{
+			System.out.println("Numer is Not palindrome number");
+		}
+	}
+} 
+*/
+//-----------------------------------------------------
+//18. Write a Java Program to print all the Prime Factors of the Given Number.
+
+//-----------------------------------------------------
+//19. To print the following series EVEN number Series 2 4 6 8 10 12 14 16 .....
+/*
+class Even{
+	public static void main(String[] args){
+		int a = 20;
+		for (int i=2;i<=a;i++){
+			if(i%2==0){
+				System.out.print(i+" ");
+			}
+		}
+		
+		//Alternate method
+		//int i=2;
+		//while(i<=a){
+		//	System.out.print(i+" ");
+		//	i=i+2;
+		//}
+		
+	}
+}
+*/
+
+//-----------------------------------------------------
+
+//20. To print the following series ODD number Series 1 3 5 7 9 11 13 ....
+/*
+class Odd{
+	public static void main(String[] args){
+		int a = 20;
+		
+		//for (int i=1;i<=a;i++){
+		//	if(i%2!=0){
+		//		System.out.print(i+" ");
+		//	}
+		//}
+		
+		 //Alternate method
+		int i=1;
+		while(i<=a){
+			System.out.print(i+" ");
+			i=i+2;
+		}
+		
+	}
+}
+*/
+/* 1}
+Create an abstract class 'Parent' with a method 'message'.
+ It has two subclasses each having a method with the same name 'message' 
+ that prints "This is first subclass" and "This is second subclass" respectively. 
+ Call the methods 'message' by creating an object for each subclass.     */
+ 
+ /*
+abstract class Parent{
+	abstract void message();
+}
+
+class Child1 extends Parent{
+	void message(){
+		System.out.println("This is first subclass") ;
+	}
+}
+class Child2 extends Parent{
+	void message(){
+		System.out.println("This is second subclass") ;
+	}
+}
+
+public class Abstractpra{
+	public static void main(String[] args){
+		Parent p1 = new Child1();
+		p1.message();
+		Parent p2 = new Child2();
+		p2.message();
+	}
+}
+ */
+//--------------------------------------------------------------
+
+/* 2}
+Create an abstract class 'Bank' with an abstract method 'getBalance'. 
+$100, $150 and $200 are deposited in banks A, B and C respectively. 
+'BankA', 'BankB' and 'BankC' are subclasses of class 'Bank', each having a method named 'getBalance'. 
+Call this method by creating an object of each of the three classes.   */
+
+/*
+abstract class Bank{
+	abstract void getBalance();
+}
+class BankA extends Bank{
+	void getBalance(){
+		System.out.println("$100");
+	}
+}
+class BankB extends Bank{
+	void getBalance(){
+		System.out.println("$150");
+	}
+}
+class BankC extends Bank{
+	void getBalance(){
+		System.out.println("$200");
+	}
+}
+public class Abstractpra{
+	public static void main(String[] args){
+		Bank b1 = new BankA();
+		b1.getBalance();
+		Bank b2 = new BankB();
+		b2.getBalance();
+		Bank b3 = new BankC();
+		b3.getBalance();
+	}
+}
+
+*/
+//--------------------------------------------------------------
+/* 3}
+We have to calculate the percentage of marks obtained in three subjects (each out of 100) 
+by student A and in four subjects (each out of 100) by student B. 
+Create an abstract class 'Marks' with an abstract method 'getPercentage'. 
+It is inherited by two other classes 'A' and 'B' each having a method with the same name 
+which returns the percentage of the students. The constructor of student A takes 
+the marks in three subjects as its parameters and the marks in four subjects as its parameters for student B. 
+Create an object for eac of the two classes and print the percentage of marks for both the students.
+*/
+/*
+abstract class Marks{
+	abstract float getPercentage();
+}
+class A extends Marks{
+	int a;
+	int b;
+	int c;
+	A(int a,int b,int c){
+		this.a=a;
+		this.b=b;
+		this.c=c;
+	}
+
+	float getPercentage(){
+		float add=(this.a+this.b+this.c);
+		float percentage=(add/150)*100;
+		System.out.println(percentage);
+		return percentage;
+	}
+}
+class B extends Marks{
+	int a;
+	int b;
+	int c;
+	int d;
+	B(int a,int b,int c,int d){
+		this.a=a;
+		this.b=b;
+		this.c=c;
+		this.d=d;
+	}
+	float getPercentage(){
+		float add=(this.a+this.b+this.c+this.d);
+		float percentage=(add/200)*100;
+		return percentage;
+	}
+}
+class Getmarks{
+	public static void main(String [] args){
+		Marks m= new A(50,46,23);
+		Marks m1=new B(46,48,42,46);
+		System.out.println("Percentage of Student A is:"+m.getPercentage());
+		System.out.println("Percentage of Student B is:"+m1.getPercentage());
+	}
+}
+*/
+
+//--------------------------------------------------------------
+
+/* 4}
+An abstract class has a construtor which prints "This is constructor of abstract class", 
+an abstract method named 'a_method' and a non-abstract method which prints "This is a normal method of abstract class".
+A class 'SubClass' inherits the abstract class and has a method named 'a_method' which prints "This is abstract method". 
+Now create an object of 'SubClass' and call the abstract method and the non-abstract method. (Analyse the result)
+*/
+
+/*
+abstract class Abstract{
+	Abstract(){
+		System.out.println("This is constructor of abstract class");
+	}
+	abstract void a_method();
+	void nonabstract_method(){
+		System.out.println("This is a normal method of abstract class");
+	}
+}
+class SubClass extends Abstract{
+	void a_method(){
+		System.out.println("This is abstract method");
+	}
+}
+public class Abstractpra{
+	public static void main(String[] args){
+		Abstract a1 = new SubClass();
+		a1.a_method();
+		a1.nonabstract_method();
+	}
+}
+*/
+
+//--------------------------------------------------------------
+
+/* 5}
+Create an abstract class 'Animals' with two abstract methods 'cats' and 'dogs'. 
+Now create a class 'Cats' with a method 'cats' which prints "Cats meow" and 
+a class 'Dogs' with a method 'dogs' which prints "Dogs bark", both inheriting the class 'Animals'. 
+Now create an object for each of the subclasses and call their respective methods.
+*/
+
+/*
+abstract class Animals{
+	abstract void cats();
+	abstract void dogs();
+}
+class Cats extends Animals{
+	void cats(){
+		System.out.println("Cats meow");
+	}
+	void dogs(){}
+}
+class Dogs extends Animals{
+	void dogs(){
+		System.out.println("Dogs bark");
+	}
+	void cats(){}
+}
+public class Abstractpra{
+	public static void main(String[] args){
+		Animals a1 = new Cats();
+		a1.cats();
+		Animals a2 = new Dogs();
+		a2.dogs();
+	}
+}
+
+*/
+
+/* 6}
+We have to calculate the area of a rectangle, a square and a circle. 
+Create an abstract class 'Shape' with three abstract methods namely 'RectangleArea' 
+taking two parameters, 'SquareArea' and 'CircleArea' taking one parameter each. 
+The parameters of 'RectangleArea' are its length and breadth, 
+that of 'SquareArea' is its side and that of 'CircleArea' is its radius. 
+Now create another class 'Area' containing all the three methods 
+'RectangleArea', 'SquareArea' and 'CircleArea' for 
+printing the area of rectangle, square and circle respectively. 
+Create an object of class 'Area' and call all the three methods.
+*/
+/*
+abstract class Shape{
+	abstract void RectangleArea(int length,int breadth);
+	abstract void SquareArea(int side);
+	abstract void CircleArea(double radius);
+}
+class Area extends Shape{
+	void RectangleArea(int length,int breadth){
+		System.out.println("Area of Rectangle "+(length*breadth));
+	}
+	void SquareArea(int side){
+		System.out.println("Area of Square "+(side*side));
+	}
+	void CircleArea(double radius){
+		System.out.println("Area of Circle "+(2.0*3.14*radius*radius));
+	}
+}
+public class Abstractpra{
+	public static void main(String[] args){
+		Shape s1 = new Area();
+		s1.RectangleArea(10,20);
+		s1.SquareArea(10);
+		s1.CircleArea(7.0);
+	}
+}
+*/
+
