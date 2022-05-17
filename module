@@ -1443,7 +1443,303 @@ public static void main(String[] args)
 
 }
 --------------------------------------------------------------------
-/*
+/*A class has an integer data member 'i' and a method named 'printNum' to print thevalue of 'i'.
+Its subclass also has an integer data member 'j' and a method named 'printNum' to print the value 
+of 'j'. Make an object of the subclass and use it to assign a value to 'i' and to 'j'. Now call the method 
+'printNum' by this object.
+--->>class I{
+int i;
+public void printNum(){
+System.out.println(i);
+  }
+}
+class J extends I{
+   int j;
+   public void printnum(){
+   System.out.println(j);
+   }
+  }
+  class Ans{
+    publi static void main(String[] args){
+    J a= new J();
+    a.i = 5;
+    a.j = 7;
+    a.j = a.i;
+    a.printnum();
+    }
+  }
+ --------------------------------------------------------------------------
+ /*8.Suppose a class 'A' has a static method to print "Parent". Its subclass 'B' also has a static 
+ method with the same name to print "Child". Now call this method by the objects of the two classes. 
+ Also, call this method by an object of the parent class refering to the child class i.e. A obj = new B().
+ --->>
+ 
+ -----------------------------------------------------------------------------
+ /*9.All the banks operating in India are controlled by RBI. RBI has set a well defined guideline (e.g. minimum 
+ interest rate, minimum balance allowed, maximum withdrawal limit etc) which all banks must follow. For example, 
+ suppose RBI has set minimum interest rate applicable to a saving bank account to be 4% annually; however, banks are 
+ free to use 4% interest rate or to set any rates above it.
+ Write a JAVA program to implement bank functionality in the above scenario and demonstrate the dynamic polymorphism 
+ concept. Note: Create few classes namely Customer, Account, RBI (Base Class) and few derived classes (SBI, ICICI, PNB 
+ etc). Assume and implement required member variables and functions in each class.
+--->>Hint:
+Class Customer
+{
+//Personal Details ...
+// Few functions ...
+}
+Class Account
+{
+// Account Detail ...
+// Few functions ...
+}
+Class RBI
+{
+Customer c; //hasA relationship
+Account a; //hasA relationship
+..
+Public double GetInterestRate() { }
+Public double GetWithdrawalLimit() { }
+}
+Class SBI: public RBI
+{
+//Use RBI functionality or define own functionality.
+}
+Class ICICI: public RBI
+{
+//Use RBI functionality or define own functionality.
+}
+________________________________________-----------------------------------
+@@@@@  Level 1
+/*1.1.Write a program to print the sum of two numbers entered by user by defining your own method.
+--->>public class SumOfNumbers1  
+{  
+public static void main(String args[])   
+{  
+int n1 = 225, n2 = 115, sum;  
+sum = n1 + n2;  
+System.out.println("The sum of numbers is: "+sum);  
+}  
+}  
+------------------------------------------------------------------------------
+/*2.Define a method that returns the product of two numbers entered by user.
+--->>import java.util.Scanner;
+public class ProductOfNumbur1{
+public static void main(String args[]){
+Scanner sc=new Scanner(System.in);
+// create scanner object
+System.out.print("Enter the first number: ");
+int num1=sc.nextInt();
+//this method reads value for num1 providing by user
+System.out.print("Enter the second number: ");
+int num2=sc.nextInt();
+//this method reads value for num2 providing by user
+sc.close();//closing the scanner class
+calcProduct(num1,num2); //calling the method
+}
+//calcTotal method
+public static void calcProduct(int x,int y){
+    int result=0;
+result=x*y;
+System.out.println("product of two numbers  "+result);
+}
+}
+---------------------------------------------------------------------------
+/*3.3.Write a program to print the circumference and area of a circle of radius entered 
+by user by defining your own method
+--->>import java.util.Scanner;  
+public class AreaAndCircumferenceOfCircle  
+{  
+public static void main(String args[])  
+{  
+double circumference, area;   
+int radius;  
+//object of the Scanner class  
+Scanner sc=new Scanner (System.in);  
+System.out.print("Enter the radius of the circle: ");  
+radius=sc.nextInt();  
+//calculating area of circle  
+area=Math.PI*(radius*radius);  
+//prints the calculated area  
+System.out.println("The area of the circle is: "+area);  
+//calculating circumference of circle  
+circumference=Math.PI*2*radius;  
+//prints the calculated circumference  
+System.out.println("The circumference of the circle is: "+circumference);  
+}  
+}  
+----------------------------------------------------------------------------
+/*4.Define two methods to print the maximum and the minimum number respectively among 
+three numbers entered by user.
+--->>
+-----------------------------------------------------------------------------
+/*5.A person is elligible to vote if his/her age is greater than or equal to 18. Define a 
+method to find out if he/she is elligible to vote.
+--->>// Java program to find valid for vote or not
+import java.util.Scanner;
+
+public class Voting {
+
+	public static void main(String[] args) 
+	{
+          // Declaring variables
+          int age,shrt;
+          // taking values from user at run time
+		Scanner scan = new Scanner(System.in);
+		System.out.println(" Please enter your age");
+		age = scan.nextInt();
+		// Checking condition for voting..
+		if(age>=18)
+		{
+			System.out.println("Welcome to voting system Yo can Vote");
+		}
+		else
+		{
+			shrt= (18 - age);
+			System.out.println("Sorry,You can vote after :"+ shrt + " years");
+		}
+
+	}
+
+}
+
+
+-------------------------------------------------------------------------------
+/*6.Define a method to find out if number is prime or not.
+--->>public class Main {
+
+  public static void main(String[] args) {
+
+    int num = 29;
+    boolean flag = false;
+    for (int i = 2; i <= num / 2; ++i) {
+      // condition for nonprime number
+      if (num % i == 0) {
+        flag = true;
+        break;
+      }
+    }
+
+    if (!flag)
+      System.out.println(num + " is a prime number.");
+    else
+      System.out.println(num + " is not a prime number.");
+  }
+}
+-------------------------------------------------------------------------------
+/*7.Write a program which will ask the user to enter his/her marks (out of 100). Define a method 
+that will display grades according to the marks entered as below:
+Marks        Grade
+91-100         AA
+81-90          AB
+71-80          BB
+61-70          BC
+51-60          CD
+41-50          DD
+<=40          Fail
+--->>// Java Program to Read Grade & Displaying Equivalent Desc
+
+// Importing Classes/Files
+import java.util.*;
+
+public class GFG {
+
+	// Main Driver Method
+	public static void main(String[] args)
+	{
+
+		// User is supposed to enter grade among them
+		System.out.println(
+			"Enter Grade varying from S,A,B,C,D");
+		String grade = "A";
+
+		// Checking whether grade == "S" or not
+		if (grade == "S") {
+			System.out.println(
+				"Student has scored between 90 to 100");
+		}
+		// Checking whether grade == "A" or not
+		else if (grade == "A") {
+			System.out.println(
+				"Student has scored between 80 to 90");
+		}
+		// Checking whether grade == "B" or not
+		else if (grade == "B") {
+			System.out.println(
+				"Student has scored between 70 to 80");
+		}
+		// Checking whether grade == "C" or not
+		else if (grade == "C") {
+			System.out.println(
+				"Student has scored between 60 to 70");
+		}
+		// Checking whether grade == "D" or not
+		else if (grade == "D") {
+			System.out.println(
+				"Student has scored between 50 to 60");
+		}
+		else {
+
+			// Printing message-user pressed some other key
+			System.out.println(
+				"The grade you entered is not valid!");
+		}
+	}
+}
+--------------------------------------------------------------------------------
+/*9.9.
+Write a program to print the factorial of a number by defining a method named 'Factorial'.
+Factorial of any number n is represented by n! and is equal to 1*2*3*....*(n-1)*n. E.g.-
+4! = 1*2*3*4 = 24
+3! = 3*2*1 = 6
+2! = 2*1 = 2
+Also,
+1! = 1
+0! = 0
+--->>import java.util.*;
+class Ans{
+public static int fact(int x){
+if (x==0 || x == 1){
+return 1;
+}
+else{
+return fact(x-1)*x;
+}
+}
+
+public static void main(String[] args){
+System.out.println(fact(5));
+System.out.println(fact(10));
+System.out.println(fact(1));
+System.out.println(fact(0));
+}
+}
+----------------------------------------------------------------------------
+////***********Object Assignment*************################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
