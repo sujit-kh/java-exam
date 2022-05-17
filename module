@@ -1571,7 +1571,17 @@ System.out.println("The circumference of the circle is: "+circumference);
 ----------------------------------------------------------------------------
 /*4.Define two methods to print the maximum and the minimum number respectively among 
 three numbers entered by user.
---->>
+--->>public class Main {   public static void main(String args[]) {   
+// creating scanner to accept radius of circle Scanner scanner = new Scanner(System.in); 
+System.out.println("Welcome in Java program to find largest and smallest of three numbers");   
+System.out.println("Please enter first number :"); int first = scanner.nextInt();   
+System.out.println("Please enter second number :"); int second = scanner.nextInt();  
+System.out.println("Please enter third number :"); int third = scanner.nextInt();   
+int largest = largest(first, second, third); int smallest = smallest(first, second, third);   
+System.out.printf("largest of three numbers %d, %d, and %d is : %d %n", first, second, third, largest); 
+System.out.printf("smallest of three numbers %d, %d, and %d is : %d %n", first, second, third, smallest);   
+scanner.close(); }
+
 -----------------------------------------------------------------------------
 /*5.A person is elligible to vote if his/her age is greater than or equal to 18. Define a 
 method to find out if he/she is elligible to vote.
@@ -1602,8 +1612,6 @@ public class Voting {
 	}
 
 }
-
-
 -------------------------------------------------------------------------------
 /*6.Define a method to find out if number is prime or not.
 --->>public class Main {
@@ -1716,46 +1724,636 @@ System.out.println(fact(0));
 }
 ----------------------------------------------------------------------------
 ////***********Object Assignment*************################
+1.Write a program to print the name, salary and date of joining of 10 employees in a company.
+Use array of objects.
+--->>class Main{
+   public static void main(String args[]){
+     //create array of employee object  
+    Employee[] obj = new Employee[2] ;
+ 
+     //create & initialize actual employee objects using constructor
+     obj[0] = new Employee(100,"ABC");
+     obj[1] = new Employee(200,"XYZ");
+ 
+     //display the employee object data
+     System.out.println("Employee Object 1:");
+     obj[0].showData();
+     System.out.println("Employee Object 2:");
+     obj[1].showData();
+  }
+}
+//Employee class with empId and name as attributes
+class Employee{
+  int empId;
+  String name;
+  //Employee class constructor
+  Employee(inteid, String n){
+     empId = eid;
+     name = n;
+  }
+public void showData(){
+   System.out.print("EmpId = "+empId + "  " + " Employee Name = "+name);
+   System.out.println();
+ }
+}
+----------------------------------------------------------------------------------
+/*2.Write a program to print the roll number and average marks of 8 students in three subjects (each out of 100). 
+The marks are entered by user.
+--->>package javaapplication1;
 
+import java.util.Scanner;
 
+public class marks {
 
+public static void main(String[] args) {
 
+int roll, s1, s2, s3;
+Scanner input = new Scanner(System.in);
+for(int i=0; i<=8; i++){
 
+for(int j=i; j<=8; j++){
+System.out.print("Enter Roll number :");
+roll = input.nextInt();
 
+System.out.print("Enter First subject number :");
+s1 = input.nextInt();
 
+System.out.print("Enter second subject number :");
+s2 = input.nextInt();
 
+System.out.print("Enter third subject number :");
+s3 = input.nextInt();
 
+int avg = (s1 +s2 + s3)/3 ;
+System.out.println("Student of Roll No " +roll + " get Avarage mark of "+avg);
+}
+}
+}
 
+}
+-----------------------------------------------------------------------------
+/*3.Write a program to calculate the average height of all the students of a class.
+The number of students and their heights in a class are entered by user.
+--->>import java.util.*;
 
+class Avg{
+  public static void main(String[] args){
+  	
+  	float sum = 0, avg;
+  	
+    Scanner s1 = new Scanner(System.in);
+    
+    System.out.println("Enter number of students");
+    int n = s1.nextInt();
+    
+    System.out.println("Enter height of students");
+    
+    for (int i = 0; i < n; i++) {
+    	System.out.println("Student " + (i+1) + ":");
+    	float height = s1.nextFloat();
+    	sum = sum + height;
+    }
+    
+    avg = sum/n;
+    System.out.println("Average heigth : " + avg);
+  }
+}
+---------------------------------------------------------------------------
+/*4.4.Lets create a bank account. Create a class named 'BankAccount' with the following data members
+1 - Name of depositor
+2 - Address of depositor
+3 - Type of account
+4 - Balance in account
+5 - Number of transactions
+Class 'BankAccount' has a method for each of the following 1 - Generate a unique account number for each depositor
+For first depositor, account number will be BA1000, for second depositor it will be BA1001 and so on
+2 - Display information and balance of depositor
+3 - Deposit more amount in balance of any depositor
+4 - Withdraw some amount from balance deposited
+5 - Change address of depositor
+After creating the class, do the following operations
+1 - Enter the information (name, address, type of account, balance) of the depositors. Number of depositors are to be 
+entered by user.
+2 - Print the information of any depositor.
+3 - Add some amount to the account of any depositor and then display final informaion of that depositor
+4 - Remove some amount from the account of any depositor and then display final informaion of that depositor
+5 - Change the address of any depositor and then display the final information of that depositor
+6 - Randomly repeat these processes for some other bank accounts and after that print the total number of transactions.
 
+--->>import java.util.Scanner;  
+class BankDetails {  
+    private String accno;  
+    private String name;  
+    private String acc_type;  
+    private long balance;  
+    Scanner sc = new Scanner(System.in);  
+    //method to open new account  
+    public void openAccount() {  
+        System.out.print("Enter Account No: ");  
+        accno = sc.next();  
+        System.out.print("Enter Account type: ");  
+        acc_type = sc.next();  
+        System.out.print("Enter Name: ");  
+        name = sc.next();  
+        System.out.print("Enter Balance: ");  
+        balance = sc.nextLong();  
+    }  
+    //method to display account details  
+    public void showAccount() {  
+        System.out.println("Name of account holder: " + name);  
+        System.out.println("Account no.: " + accno);  
+        System.out.println("Account type: " + acc_type);  
+        System.out.println("Balance: " + balance);  
+    }  
+    //method to deposit money  
+    public void deposit() {  
+        long amt;  
+        System.out.println("Enter the amount you want to deposit: ");  
+        amt = sc.nextLong();  
+        balance = balance + amt;  
+    }  
+    //method to withdraw money  
+    public void withdrawal() {  
+        long amt;  
+        System.out.println("Enter the amount you want to withdraw: ");  
+        amt = sc.nextLong();  
+        if (balance >= amt) {  
+            balance = balance - amt;  
+            System.out.println("Balance after withdrawal: " + balance);  
+        } else {  
+            System.out.println("Your balance is less than " + amt + "\tTransaction failed...!!" );  
+        }  
+    }  
+    //method to search an account number  
+    public boolean search(String ac_no) {  
+        if (accno.equals(ac_no)) {  
+            showAccount();  
+            return (true);  
+        }  
+        return (false);  
+    }  
+}  
+public class BankingApp {  
+    public static void main(String arg[]) {  
+        Scanner sc = new Scanner(System.in);  
+        //create initial accounts  
+        System.out.print("How many number of customers do you want to input? ");  
+        int n = sc.nextInt();  
+        BankDetails C[] = new BankDetails[n];  
+        for (int i = 0; i < C.length; i++) {  
+            C[i] = new BankDetails();  
+            C[i].openAccount();  
+        }  
+        // loop runs until number 5 is not pressed to exit  
+        int ch;  
+        do {  
+            System.out.println("\n ***Banking System Application***");  
+            System.out.println("1. Display all account details \n 2. Search by Account number\n 3. 
+	    Deposit the amount \n 4. Withdraw the amount \n 5.Exit ");  
+            System.out.println("Enter your choice: ");  
+            ch = sc.nextInt();  
+                switch (ch) {  
+                    case 1:  
+                        for (int i = 0; i < C.length; i++) {  
+                            C[i].showAccount();  
+                        }  
+                        break;  
+                    case 2:  
+                        System.out.print("Enter account no. you want to search: ");  
+                        String ac_no = sc.next();  
+                        boolean found = false;  
+                        for (int i = 0; i < C.length; i++) {  
+                            found = C[i].search(ac_no);  
+                            if (found) {  
+                                break;  
+                            }  
+                        }  
+                        if (!found) {  
+                            System.out.println("Search failed! Account doesn't exist..!!");  
+                        }  
+                        break;  
+                    case 3:  
+                        System.out.print("Enter Account no. : ");  
+                        ac_no = sc.next();  
+                        found = false;  
+                        for (int i = 0; i < C.length; i++) {  
+                            found = C[i].search(ac_no);  
+                            if (found) {  
+                                C[i].deposit();  
+                                break;  
+                            }  
+                        }  
+                        if (!found) {  
+                            System.out.println("Search failed! Account doesn't exist..!!");  
+                        }  
+                        break;  
+                    case 4:  
+                        System.out.print("Enter Account No : ");  
+                        ac_no = sc.next();  
+                        found = false;  
+                        for (int i = 0; i < C.length; i++) {  
+                            found = C[i].search(ac_no);  
+                            if (found) {  
+                                C[i].withdrawal();  
+                                break;  
+                            }  
+                        }  
+                        if (!found) {  
+                            System.out.println("Search failed! Account doesn't exist..!!");  
+                        }  
+                        break;  
+                    case 5:  
+                        System.out.println("See you soon...");  
+                        break;  
+                }  
+            }  
+            while (ch != 5);  
+        }  
+    }  
+-----------------------------------------------------------------------------
+ /*5.5.Write a program to create a directory that contains the following information.
+(a) Name of a person
+(b) Address
+(c) Telephone Number (if available with STD code)
+(d) Mobile Number (if available)
+(e) Head of the family
+(f) Unique ID No.
+The program will support the following menu based activities:
+(a) Create a database entry (The Unique ID number must be unique for every entry, the telephone numbers of 
+two or more persons can be same if and only if the head of family is same)
+(b) Edit an entry (Must be identified by only the Unique ID number)
+(c) Search by keyword (Any keyword may not be complete; even if the keyword matches partially with any field,
+the corresponding information must be displayed)
+--->>
 
+-----------------------------------------------------------------------------
+////// Class Object Assignment*****************//////////////////
+/*1.Create a class named 'Student' with String variable 'name' and integer variable 'roll_no'. Assign the value 
+of roll_no as '2' and that of name as "John" by creating an object of the class Student.
+--->>package com.codesdope;
 
+public class Student {
+    String name;
+    int roll_no;
+}
 
+public class TestStudent {
+    
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.name = "John";
+        s.roll_no = 2;
+        
+        System.out.println("Name is " + s.name + " add roll number is " + s.roll_no);
+    }
+}
+----------------------------------------------------------------------------------
+/*2.2.
+Assign and print the roll number, phone number and address of two students having names "Sam" and "John" respectively 
+by creating two objects of class 'Student'.
+--->>class Student {
 
+int RollNumber;
 
+int PhoneNumber;
 
+String Address;
 
+}
 
+public class CreateClass {
 
+public static void main(String[] args) {
 
+Student Sam = new Student();
 
+Student John = new Student();
 
+Sam.RollNumber=20;
 
+Sam.PhoneNumber=1234567890;
 
+Sam.Address="London !";
 
+John.RollNumber=01;
 
+John.PhoneNumber=976541230;
 
+John.Address="China !";
 
+System.out.println(Sam.RollNumber+" "+Sam.PhoneNumber+" "+Sam.Address); System.out.println(John.RollNumber+" "+John.PhoneNumber+" "+John.Address);
 
+}
 
+}
+------------------------------------------------------------------------------------
+3.Write a program to print the area and perimeter of a triangle having sides of 3, 4 and 5 units by 
+creating a class named 'Triangle' 
+without any parameter in its constructor.
+--->>public class Triangle {
+    int a, b, c;
+    public double getArea() {
+        double s = (a + b + c) / 2.0;
+        return Math.pow((s * (s - a) * (s - b) * (s - c)), .5);
+    }
+    public double getPerimeter() {
+        return (a + b + c);
+    }
+}         
 
+public class TestTriangle {
+             
+    public static void main(String[] args) {
+        Triangle t = new Triangle();
+        t.a = 2;
+        t.b = 5;
+        t.c = 6;
+        System.out.println(t.getArea());
+        System.out.println(t.getPerimeter);
+    }
+}
+--------------------------------------------------------------------------------
+4.Write a program to print the area and perimeter of a triangle having sides of 3, 4 and 5 units by creating a 
+class named 'Triangle' with constructor having the three sides as its parameters.
+--->>class Triangle_qfour
+{
+    int s1,s2,s3;
+    public Triangle_qfour(int side1,int side2,int side3)
+     {
+        s1=side1;
+        s2=side2;
+        s3=side3;
+     }
+       public static void main(String[] args)
+       {
+             Triangle_qfour t1=new Triangle_qfour(3,4,5);
+             int peri=(t1.s1+t1.s2+t1.s3);
+             System.out.println("perimeter is:"+peri);
+             int sp=(peri/2);
+             int ar=((((sp*(sp-t1.s1))*(sp-t1.s2))*(sp-t1.s3)));       
+             int area=(int)Math.sqrt(ar);   
+             System.out.println("Area is:"+area);
+        }
+}
+-------------------------------------------------------------------------------
+/*5.Write a program to print the area of two rectangles having sides (4,5) and (5,8) respectively by 
+creating a class named 'Rectangle' with a method named 'Area' which returns the area and length and 
+breadth passed as parameters to its constructor.
+--->>package com.codesdope;
+    public class Rectangle {
+    int length;
+    int breadth;
+    public Rectangle(int l, int b) {
+        length = l;
+        breadth = b;
+    }
+    public int getArea() {
 
+        return length * breadth;
+    }
 
+    public int getPerimeter() {
+            return 2 * (length * breadth);
+    }
+}
+         
+public class TestRectangle {
+             
+    public static void main(String[] args) {
+        Rectangle a = new Rectangle(4, 5);
+        Rectangle b = new Rectangle(5, 8);
+        System.out.println("Area : " + a.getArea() + " Perimeter is " + a.getPerimeter());
+        System.out.println("Area : " + b.getArea() + " Perimeter is " + b.getPerimeter());
+    }
+}---------------------------------------------------------------------------------
+6.Write a program to print the area of a rectangle by creating a class named 'Area' having two methods. 
+First method named as 'setDim' takes length and breadth of rectangle as parameters and the second method 
+named as 'getArea' returns the area of the rectangle. Length and breadth of rectangle are entered through keyboard.
+--->>public class Ans4{
 
+public static void main(String[] args){
 
+Area a = new Area(4,5);
 
+a.setDim();
 
+}
 
+}
+
+class Area{
+
+int length, breadth;
+
+Area(int l , int b){
+
+length = l;
+
+breadth = b;
+
+}
+
+void setDim(){
+
+int disp = length * breadth;
+
+System.out.println(disp);
+
+}
+
+}
+________________________________________
+7.Write a program to print the area of a rectangle by creating a class named 'Area' taking the values of its 
+length and breadth as parameters of its constructor and having a method named 'returnArea' which returns the area of 
+the rectangle. Length and breadth of rectangle are entered through keyboard.
+--->.import java.util.Scanner;
+class Area
+{
+    int length,breadth;
+  public Area(int l,int b)
+  {
+       length=l;
+       breadth=b;
+   }
+  public int getArea()
+  {
+        return length*breadth;
+  }
+  
+  public static void main(String[] args)
+  {
+     int l,b;
+     Scanner s=new Scanner(System.in);
+     System.out.println("Enter length"); 
+     l=s.nextInt();
+     System.out.println("Enter breadth");
+     b=s.nextInt();
+     Area a=new Area(l,b);
+    System.out.println("Area is :"+a.getArea());
+  }
+}  
+ ------------------------------------------------------------------------------
+8.Print the average of three numbers entered by user by creating a class named 'Average' having a 
+method to calculate and print the average.
+--->>import java.util.Scanner;
+public class Exercise2 {
+
+ public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Input the first number: ");
+        double x = in.nextDouble();
+        System.out.print("Input the second number: ");
+        double y = in.nextDouble();
+        System.out.print("Input the third number: ");
+        double z = in.nextDouble();
+        System.out.print("The average value is " + average(x, y, z)+"\n" );
+    }
+
+  public static double average(double x, double y, double z)
+    {
+        return (x + y + z) / 3;
+    }
+}
+---------------------------------------------------------------------------------
+9.Print the sum, difference and product of two complex numbers by creating a class named 'Complex' 
+with separate methods for each operation whose real and imaginary parts are entered by user.
+package com.codesdope;
+   
+public class Complex {
+    int real;
+    int imag;
+    public Complex(int r, int i) {
+
+        real = r;
+        imag = i;
+    }
+       
+    public static Complex add(Complex a, Complex b) {
+
+        return new Complex((a.real + b.real), (a.imag - b.imag));
+    }
+       
+    public static Complex diff(Complex a, Complex b) {
+
+        return new Complex((a.real - b.real), (a.imag - b.imag));
+    }
+       
+    public static Complex product(Complex a, Complex b) {
+
+        return new Complex(((a.real * b.real) - (a.imag * b.imag)), ((a.real * b.imag) + (a.imag * b.real)));
+    }
+      
+    public void printComplex() {
+        if (real == 0 && imag != 0) {
+            System.out.println(imag + "i");
+        } else if (imag == 0 && real != 0) {
+            System.out.println(real);
+        } else {
+            System.out.println(real + "+" + imag + "i");
+        }
+    }                          
+}
+   
+public class TestComplex {
+       
+    public static void main(String[] args) {
+           
+        Complex c = new Complex(4, 5);
+        Complex d = new Complex(9, 4);
+           
+        Complex e = Complex.add(c, d);
+        Complex f = Complex.diff(c, d);
+        Complex g = Complex.product(c, d);
+        e.printComplex();
+        f.printComplex();
+        g.printComplex();            
+    }
+}
+--------------------------------------------------------------------------------
+10.Write a program that would print the information (name, year of joining, salary, address) of 
+three employees by creating a class named 'Employee'. The output should be as follows:
+Name        Year of joining        Address
+Robert            1994                64C- WallsStreat
+Sam                2000                68D- WallsStreat
+John                1999                26B- WallsStreat
+--->>class Employee{
+  private String name, address;
+  private int year, salary;
+  public Employee(String n, int y, int sal, String add){
+    name = n;
+    year = y;
+    salary = sal;
+    address = add;
+  }
+  public String getName(){
+    return name;
+  }
+  public int getYear(){
+    return year;
+  }
+  public int getSalary(){
+    return salary;
+  }
+  public String getAddress(){
+    return address;
+  }
+}
+
+class Emp{
+  public static void main(String[] args){
+    Employee e1 = new Employee("Robert", 1994, 500000, "64C- WallsStreet");
+    Employee e2 = new Employee("Sam", 2000, 740000, "68d- WallsStreet");
+    Employee e3 = new Employee("John", 1999, 600000, "26B- WallsStreet");
+    System.out.println("Name\tYear of joining\tSalary\tAddress");
+    System.out.println(e1.getName()+"\t"+e1.getYear()+"\t\t\t"+e1.getSalary()+"\t"+e1.getAddress());  // printing details of employee 1
+    System.out.println(e2.getName()+"\t\t"+e2.getYear()+"\t\t\t"+e2.getSalary()+"\t"+e2.getAddress());  // printing details of employee 2
+    System.out.println(e3.getName()+"\t"+e3.getYear()+"\t\t\t"+e3.getSalary()+"\t"+e3.getAddress());  // printing details of employee 3
+  }
+}
+------------------------------------------------------------------------------
+11.Add two distances in inch-feet by creating a class named 'AddDistance'.
+--->>import java.util.Scanner;
+class Adddistance
+{ 
+        int feet,r;
+        public void Convert(int a,int b,int c,int d)
+          {
+              int count=0;
+              r=a+b;
+              while(r>12)
+              {
+                   r=r-12;
+                   count++;
+              }
+               feet=c+d+count;  
+        }
+       public int feet()
+      {
+             return feet;
+       }
+        public int inches()
+        {
+             return r;
+       }
+      public static void main(String[] args)
+     {
+          int f1,i1,f2,i2;
+          Scanner s=new Scanner(System.in);
+          Adddistance dis=new Adddistance();
+          System.out.println("Enter distance1 in feet");
+          f1=s.nextInt();
+          System.out.println("Enter distance1in inches");
+          i1=s.nextInt();
+          System.out.println("Enter distance2 in feet");
+          f2=s.nextInt();
+          System.out.println("Enter distance2 in inches");
+          i2=s.nextInt();
+          dis.Convert(i1,i2,f1,f2);
+          System.out.println("Distance in feet is"+dis.feet());
+          System.out.println("Distance in inches is"+dis.inches());
+}
+}
 
 
 
